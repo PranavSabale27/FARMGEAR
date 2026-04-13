@@ -1,83 +1,362 @@
-You are a professional frontend developer.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FarmGear Connect – Farm Equipment Rental</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
 
-Create a clean, professional website for:
-"FarmGear Connect – Farming Equipment Rental System"
+  <!-- ===================== NAVBAR ===================== -->
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <a class="brand" href="#" onclick="showPage('home')">
+        <span class="brand-mark"></span>
+        FarmGear Connect
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#" onclick="showPage('home')"   id="nav-home"      class="nav-item active">Home</a>
+        <a href="#" onclick="showPage('equip')"  id="nav-equip"     class="nav-item">Equipment</a>
+        <a href="#" onclick="showPage('cart')"   id="nav-cart"      class="nav-item cart-link">
+          Cart <span class="cart-count" id="cartCount">0</span>
+        </a>
+        <a href="#" onclick="showPage('contact')" id="nav-contact"  class="nav-item">Contact</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
 
-STRICT RULES:
-- NO emojis anywhere
-- Clean, minimal, professional UI (startup style)
-- Color theme: green + white + light gray
-- Use proper spacing, alignment, and modern fonts
-- Make it look like a real business website
+  <!-- ===================== HOME PAGE ===================== -->
+  <main id="page-home" class="page active">
 
-CODE STRUCTURE (VERY IMPORTANT):
-- Provide code in 3 SEPARATE FILES:
-  1. index.html
-  2. styles.css
-  3. script.js
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <p class="hero-eyebrow">Modern Agricultural Equipment Rental</p>
+          <h1 class="hero-heading">The Right Machine.<br>The Right Time.</h1>
+          <p class="hero-sub">FarmGear Connect bridges the gap between farmers and premium machinery. Rent by the day — no ownership required.</p>
+          <div class="hero-actions">
+            <button class="btn btn-primary" onclick="showPage('equip')">Browse Equipment</button>
+            <button class="btn btn-ghost" onclick="showPage('contact')">Get in Touch</button>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-card-stack">
+            <div class="hero-card hc-1">
+              <div class="hc-label">Available Now</div>
+              <div class="hc-name">Power Tractor 75HP</div>
+              <div class="hc-price">Rs. 2,200 / day</div>
+            </div>
+            <div class="hero-card hc-2">
+              <div class="hc-label">Top Rated</div>
+              <div class="hc-name">Combine Harvester</div>
+              <div class="hc-price">Rs. 5,500 / day</div>
+            </div>
+            <div class="hero-card hc-3">
+              <div class="hc-label">New Arrival</div>
+              <div class="hc-name">Agri Spray Drone</div>
+              <div class="hc-price">Rs. 3,000 / day</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-DO NOT combine everything in one file.
+    <!-- Stats Bar -->
+    <section class="stats-bar">
+      <div class="container stats-inner">
+        <div class="stat-item">
+          <span class="stat-num">500+</span>
+          <span class="stat-lbl">Equipment Units</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num">12,000+</span>
+          <span class="stat-lbl">Farmers Served</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num">48</span>
+          <span class="stat-lbl">Districts Covered</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num">24/7</span>
+          <span class="stat-lbl">Support Available</span>
+        </div>
+      </div>
+    </section>
 
-FEATURES:
+    <!-- How It Works -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-eyebrow">Simple Process</p>
+          <h2 class="section-title">How It Works</h2>
+          <p class="section-sub">From search to field — in three easy steps.</p>
+        </div>
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-num">01</div>
+            <h3>Browse & Search</h3>
+            <p>Find the exact machine you need from our curated list of maintained farm equipment.</p>
+          </div>
+          <div class="step-connector"></div>
+          <div class="step-card">
+            <div class="step-num">02</div>
+            <h3>Book & Pay</h3>
+            <p>Select rental duration, confirm with a small advance, and lock in your booking instantly.</p>
+          </div>
+          <div class="step-connector"></div>
+          <div class="step-card">
+            <div class="step-num">03</div>
+            <h3>Delivered to Farm</h3>
+            <p>Our team coordinates delivery and pickup. You focus on the harvest.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-1. Home Page:
-- Navbar (Home, Equipment, Cart, Contact)
-- Hero section with tagline
-- Clean layout (no clutter)
+    <!-- CTA Banner -->
+    <section class="cta-banner">
+      <div class="container cta-inner">
+        <div>
+          <h2>Ready to upgrade your farm operations?</h2>
+          <p>Browse our full equipment catalog and book the right machine today.</p>
+        </div>
+        <button class="btn btn-primary" onclick="showPage('equip')">View All Equipment</button>
+      </div>
+    </section>
 
-2. Equipment Section:
-- Show machinery in cards:
-  - Tractor
-  - Harvester
-  - Drone
-- Each card:
-  - Image
-  - Name
-  - Button: "View Details"
+  </main>
 
-3. Equipment Details:
-- Show:
-  - Name
-  - Description
-  - Rental time input (days)
-  - Cost calculation (auto update)
-- Button: "Add to Cart"
+  <!-- ===================== EQUIPMENT PAGE ===================== -->
+  <main id="page-equip" class="page">
+    <div class="page-banner">
+      <div class="container">
+        <h1 class="page-title">Equipment Catalog</h1>
+        <p class="page-sub">Professionally maintained machinery available for short and long-term rental</p>
+      </div>
+    </div>
 
-4. Cart Page:
-- Show selected item
-- Show:
-  - Rental duration
-  - Total cost
-- Button: "Proceed to Payment"
+    <div class="container section">
+      <!-- Controls -->
+      <div class="equip-controls">
+        <div class="search-box">
+          <svg class="search-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="8.5" cy="8.5" r="5.5"/><path d="M15 15l-3-3"/>
+          </svg>
+          <input type="text" id="searchInput" placeholder="Search equipment..." oninput="filterEquipment()" />
+        </div>
+        <div class="filter-group">
+          <select id="typeFilter" onchange="filterEquipment()">
+            <option value="">All Types</option>
+            <option value="tractor">Tractor</option>
+            <option value="harvester">Harvester</option>
+            <option value="drone">Drone</option>
+          </select>
+          <select id="availFilter" onchange="filterEquipment()">
+            <option value="">All Status</option>
+            <option value="available">Available</option>
+            <option value="unavailable">Not Available</option>
+          </select>
+        </div>
+        <span class="result-count" id="resultCount"></span>
+      </div>
 
-5. Payment Page (Simulation):
-- Form:
-  - Name
-  - Phone
-  - Address
-- Show advance payment (20%)
-- Button: "Confirm Booking"
-- After click:
-  - Show confirmation message:
-    "Booking successful. Admin will contact you."
+      <!-- Cards Grid -->
+      <div class="equip-grid" id="equipGrid"></div>
+      <div class="no-results" id="noResults" style="display:none;">
+        <p>No equipment matches your search. <button class="link-btn" onclick="clearFilters()">Clear filters</button></p>
+      </div>
+    </div>
+  </main>
 
-6. DESIGN REQUIREMENTS:
-- Use card layout
-- Soft shadows
-- Rounded corners
-- Hover effects
-- Proper margins and padding
-- No bright or childish colors
+  <!-- ===================== DETAIL PAGE ===================== -->
+  <main id="page-detail" class="page">
+    <div class="container section">
+      <button class="back-link" onclick="showPage('equip')">
+        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 16l-6-6 6-6"/></svg>
+        Back to Equipment
+      </button>
+      <div class="detail-layout" id="detailContent"></div>
+    </div>
+  </main>
 
-7. EXTRA (IMPORTANT FOR MARKS):
-- Search bar for equipment
-- Availability label (Available / Not Available)
-- Simple validation for form
-- Footer with contact info
+  <!-- ===================== CART PAGE ===================== -->
+  <main id="page-cart" class="page">
+    <div class="page-banner">
+      <div class="container">
+        <h1 class="page-title">Your Cart</h1>
+        <p class="page-sub">Review your selection before proceeding to payment</p>
+      </div>
+    </div>
+    <div class="container section">
+      <div id="cartContent"></div>
+    </div>
+  </main>
 
-OUTPUT FORMAT:
-- First: index.html
-- Second: styles.css
-- Third: script.js
+  <!-- ===================== PAYMENT PAGE ===================== -->
+  <main id="page-payment" class="page">
+    <div class="page-banner">
+      <div class="container">
+        <h1 class="page-title">Confirm Booking</h1>
+        <p class="page-sub">Complete your rental with a 20% advance payment</p>
+      </div>
+    </div>
+    <div class="container section">
+      <div class="payment-layout">
+        <div class="payment-form-wrap">
+          <h3 class="form-heading">Your Details</h3>
+          <div class="form-group">
+            <label for="payName">Full Name</label>
+            <input type="text" id="payName" placeholder="Enter your full name" />
+            <span class="field-error" id="err-name"></span>
+          </div>
+          <div class="form-group">
+            <label for="payPhone">Mobile Number</label>
+            <input type="tel" id="payPhone" placeholder="10-digit mobile number" maxlength="10" />
+            <span class="field-error" id="err-phone"></span>
+          </div>
+          <div class="form-group">
+            <label for="payAddress">Farm Address</label>
+            <textarea id="payAddress" rows="4" placeholder="Village, Taluka, District, State"></textarea>
+            <span class="field-error" id="err-address"></span>
+          </div>
+          <div class="form-actions">
+            <button class="btn btn-ghost" onclick="showPage('cart')">Back to Cart</button>
+            <button class="btn btn-primary" onclick="processPayment()">Confirm Booking</button>
+          </div>
+        </div>
+        <div class="payment-summary">
+          <h3 class="form-heading">Order Summary</h3>
+          <div id="paymentSummary"></div>
+        </div>
+      </div>
+    </div>
+  </main>
 
-Ensure all files are clean, readable, and easy to understand for a student.
+  <!-- ===================== CONFIRMATION PAGE ===================== -->
+  <main id="page-confirm" class="page">
+    <div class="container section confirm-wrap">
+      <div class="confirm-card">
+        <div class="confirm-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 6L9 17l-5-5"/>
+          </svg>
+        </div>
+        <h2>Booking Successful</h2>
+        <p class="confirm-msg">Thank you, <strong id="confirmedName"></strong>. Your booking has been placed. Our admin will contact you within 2 hours to confirm delivery details.</p>
+        <div class="confirm-info">
+          <div class="info-row"><span class="info-lbl">Reference ID</span><span class="info-val" id="refId"></span></div>
+          <div class="info-row"><span class="info-lbl">Advance Paid</span><span class="info-val" id="confirmedAmt"></span></div>
+          <div class="info-row"><span class="info-lbl">Contact</span><span class="info-val">+91 98765 43210</span></div>
+        </div>
+        <button class="btn btn-primary" onclick="goHome()">Return to Home</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- ===================== CONTACT PAGE ===================== -->
+  <main id="page-contact" class="page">
+    <div class="page-banner">
+      <div class="container">
+        <h1 class="page-title">Contact Us</h1>
+        <p class="page-sub">Our team is available 7 days a week to assist you</p>
+      </div>
+    </div>
+    <div class="container section">
+      <div class="contact-layout">
+        <div class="contact-info">
+          <h3>Get in Touch</h3>
+          <p>Whether you need help choosing equipment or want to know more about how renting works, our agriculture specialists are here to guide you.</p>
+          <div class="contact-items">
+            <div class="contact-item">
+              <span class="ci-label">Phone</span>
+              <span>+91 98765 43210</span>
+            </div>
+            <div class="contact-item">
+              <span class="ci-label">Email</span>
+              <span>support@farmgearconnect.in</span>
+            </div>
+            <div class="contact-item">
+              <span class="ci-label">Office</span>
+              <span>Krishi Bhavan, Civil Lines, Nagpur – 440001</span>
+            </div>
+            <div class="contact-item">
+              <span class="ci-label">Hours</span>
+              <span>6:00 AM – 9:00 PM, All Days</span>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form-wrap">
+          <h3>Send a Message</h3>
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" id="cName" placeholder="Your full name" />
+          </div>
+          <div class="form-group">
+            <label>Phone</label>
+            <input type="tel" id="cPhone" placeholder="Mobile number" />
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea id="cMsg" rows="5" placeholder="How can we help you?"></textarea>
+          </div>
+          <button class="btn btn-primary" onclick="sendContactMsg()">Send Message</button>
+          <div class="contact-success" id="contactSuccess" style="display:none;">
+            Message sent. We will respond within 30 minutes.
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <div class="brand footer-brand-name">
+          <span class="brand-mark"></span>
+          FarmGear Connect
+        </div>
+        <p>India's trusted farm equipment rental platform. Empowering farmers with modern machinery.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <a href="#" onclick="showPage('home')">Home</a>
+        <a href="#" onclick="showPage('equip')">Equipment</a>
+        <a href="#" onclick="showPage('cart')">Cart</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="#">About Us</a>
+        <a href="#">How It Works</a>
+        <a href="#">Testimonials</a>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <a href="#" onclick="showPage('contact')">Contact</a>
+        <a href="#">FAQs</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2025 FarmGear Connect. All rights reserved.</p>
+        <p>+91 98765 43210 &nbsp;|&nbsp; support@farmgearconnect.in</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
